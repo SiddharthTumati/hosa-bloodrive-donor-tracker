@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HOSA 3/19 Blood Drive Accountability — Marvin Ridge High School</title>
+  <style>
+    :root {
+      --mrhs-blue: #003082;
+      --mrhs-orange: #e85d04;
+      --text: #1a1a1a;
+      --muted: #4a4a4a;
+      --border: #c8c8c8;
+      --field-bg: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 2rem 1rem 3rem;
+      font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.5;
+      color: var(--text);
+      background: #fff;
+    }
+
+    .wrap {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 4px solid var(--mrhs-orange);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    header h1 {
+      margin: 0 0 0.35rem;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--mrhs-blue);
+      letter-spacing: -0.02em;
+    }
+
+    .sub {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .required-note {
+      font-size: 0.875rem;
+      color: var(--muted);
+      margin: 1rem 0 1.5rem;
+    }
+
+    .req {
+      color: var(--mrhs-orange);
+      font-weight: 700;
+    }
+
+    .notice {
+      border: 1px solid var(--border);
+      padding: 1rem 1rem 1rem 1rem;
+      margin-bottom: 1.75rem;
+      background: var(--field-bg);
+    }
+
+    .notice p {
+      margin: 0 0 0.75rem;
+    }
+
+    .notice p:last-child {
+      margin-bottom: 0;
+    }
+
+    fieldset {
+      border: 1px solid var(--border);
+      margin: 0 0 1.25rem;
+      padding: 1rem 1rem 1.1rem;
+      background: var(--field-bg);
+    }
+
+    legend {
+      font-weight: 600;
+      color: var(--mrhs-blue);
+      padding: 0 0.35rem;
+    }
+
+    label.block {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      color: var(--text);
+    }
+
+    .hint {
+      font-weight: 400;
+      font-size: 0.875rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+      width: 100%;
+      max-width: 100%;
+      padding: 0.5rem 0.6rem;
+      font-size: 15px;
+      font-family: inherit;
+      border: 1px solid var(--border);
+      border-radius: 0;
+      background: var(--field-bg);
+      color: var(--text);
+    }
+
+    textarea {
+      min-height: 4.5rem;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: 2px solid var(--mrhs-blue);
+      outline-offset: 1px;
+    }
+
+    .row {
+      margin-bottom: 1rem;
+    }
+
+    .row:last-child {
+      margin-bottom: 0;
+    }
+
+    .inline-options label {
+      display: block;
+      font-weight: 400;
+      margin: 0.35rem 0 0.35rem 1.5rem;
+      text-indent: -1.5rem;
+    }
+
+    .inline-options input {
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+
+    .ack label {
+      font-weight: 400;
+    }
+
+    footer.form-actions {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    button[type="submit"] {
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 0.6rem 1.25rem;
+      border: none;
+      border-radius: 0;
+      background: var(--mrhs-blue);
+      color: #fff;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background: #002266;
+    }
+
+    .footer-meta {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.8125rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>HOSA 3/19 Blood Drive Accountability Form</h1>
+      <p class="sub">Marvin Ridge High School &mdash; HOSA</p>
+    </header>
+
+    <p class="required-note"><span class="req">*</span> Indicates a required question.</p>
+
+    <div class="notice">
+      <p>It is <strong>required</strong> for all HOSA members to either donate blood or recruit someone to donate blood. Use this form to state whether you have signed up to donate or whether you are recruiting someone (include who you will recruit).</p>
+      <p>You <strong>cannot</strong> recruit another HOSA member; they must donate or recruit on their own. You <strong>cannot</strong> recruit the same person as another member.</p>
+      <p>You <strong>may</strong> recruit MRHS teachers and students. Staff may donate in the auxiliary gym. The bus drive is full; parents and other outside guests can no longer donate.</p>
+      <p>For details, check your email, HOSA&rsquo;s Instagram, the Canvas page, the March slideshow, Remind, or contact a Blood Drive Coordinator.</p>
+      <p><strong>Members who do not donate or recruit will not be considered for officer positions.</strong></p>
+    </div>
+
+    <form id="accountability-form" action="#" method="get" novalidate>
+      <fieldset>
+        <legend>Member information</legend>
+        <div class="row">
+          <label class="block" for="first-name">First name <span class="req">*</span></label>
+          <input type="text" id="first-name" name="first_name" required autocomplete="given-name" />
+        </div>
+        <div class="row">
+          <label class="block" for="last-name">Last name <span class="req">*</span></label>
+          <input type="text" id="last-name" name="last_name" required autocomplete="family-name" />
+        </div>
+        <div class="row">
+          <label class="block" for="email">What is your email? (personal) <span class="req">*</span></label>
+          <input type="email" id="email" name="email" required autocomplete="email" />
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Donation status</legend>
+        <div class="row">
+          <span class="block">Have you signed up to donate blood? <span class="req">*</span></span>
+          <div class="inline-options">
+            <label><input type="radio" name="signed_up_donate" value="no" required /> No</label>
+            <label><input type="radio" name="signed_up_donate" value="yes" /> Yes</label>
+          </div>
+        </div>
+        <div class="row">
+          <span class="block">Have you recruited someone? <span class="req">*</span></span>
+          <div class="inline-options">
+            <label><input type="radio" name="recruited" value="no_donating" required /> No; I signed up to donate blood</label>
+            <label><input type="radio" name="recruited" value="yes" /> Yes</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Recruitment details (if applicable)</legend>
+        <div class="row">
+          <label class="block" for="recruit-name">
+            If you recruited someone, who did you recruit? (First and last name.) If you are donating yourself, type: <strong>I&rsquo;m donating</strong> <span class="req">*</span>
+          </label>
+          <input type="text" id="recruit-name" name="recruit_or_donating_statement" required />
+        </div>
+        <div class="row">
+          <label class="block" for="recruit-contact">
+            What is the email or phone number of the person you recruited? If you are donating, enter your own phone number or email. <span class="req">*</span>
+          </label>
+          <input type="text" id="recruit-contact" name="recruit_contact" required inputmode="email" autocomplete="off" />
+        </div>
+      </fieldset>
+
+      <fieldset class="ack">
+        <legend>Acknowledgment</legend>
+        <div class="row">
+          <label class="block">
+            <input type="checkbox" name="understand" value="yes" required />
+            I understand that if I do not donate blood or recruit someone to donate blood, I will not be considered for officer applications. <span class="req">*</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <footer class="form-actions">
+        <button type="submit">Submit</button>
+        <p class="hint" style="margin-top: 1rem;">
+          This file is a <strong>sample</strong> layout for your club. To collect real responses, copy the fields into Google Forms, Microsoft Forms, or your school&rsquo;s approved tool and restrict access as your advisors require.
+        </p>
+      </footer>
+    </form>
+
+    <p class="footer-meta">
+      Marvin Ridge High School HOSA &mdash; Blood drive accountability (sample form). School colors: royal blue and orange.
+    </p>
+  </div>
+
+  <script>
+    document.getElementById("accountability-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var data = new FormData(this);
+      var lines = [];
+      data.forEach(function (value, key) {
+        lines.push(key + ": " + value);
+      });
+      alert("Sample only — no data was sent.\n\nPreview:\n\n" + lines.join("\n"));
+    });
+  </script>
+</body>
+</html>
