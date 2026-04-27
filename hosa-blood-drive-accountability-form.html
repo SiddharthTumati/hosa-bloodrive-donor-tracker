@@ -270,25 +270,56 @@
       <footer class="form-actions">
         <button type="submit">Submit</button>
         <p class="hint" style="margin-top: 1rem;">
-          This file is a <strong>sample</strong> layout for your club. To collect real responses, copy the fields into Google Forms, Microsoft Forms, or your school&rsquo;s approved tool and restrict access as your advisors require.
+          Submissions are saved for HOSA blood drive accountability. Contact your advisor if you need a correction.
         </p>
       </footer>
     </form>
 
     <p class="footer-meta">
-      Marvin Ridge High School HOSA &mdash; Blood drive accountability (sample form). School colors: royal blue and orange.
+      Marvin Ridge High School HOSA &mdash; Blood drive accountability. School colors: royal blue and orange.
     </p>
   </div>
 
   <script>
-    document.getElementById("accountability-form").addEventListener("submit", function (e) {
+    document.getElementById("accountability-form").addEventListener("submit", async function (e) {
       e.preventDefault();
-      var data = new FormData(this);
-      var lines = [];
-      data.forEach(function (value, key) {
-        lines.push(key + ": " + value);
-      });
-      alert("Sample only — no data was sent.\n\nPreview:\n\n" + lines.join("\n"));
+      var form = this;
+      var data = new FormData(form);
+
+      var payload = {
+        first_name: (data.get("first_name") || "").toString().trim(),
+        last_name: (data.get("last_name") || "").toString().trim(),
+        email: (data.get("email") || "").toString().trim(),
+        signed_up_donate: (data.get("signed_up_donate") || "").toString() === "yes",
+        recruited: (data.get("recruited") || "").toString() === "yes",
+        recruit_or_donating_statement: (data.get("recruit_or_donating_statement") || "").toString().trim(),
+        recruit_contact: (data.get("recruit_contact") || "").toString().trim(),
+        understand: (data.get("understand") || "").toString() === "yes"
+      };
+
+      var btn = form.querySelector('button[type="submit"]');
+      if (btn) btn.disabled = true;
+
+      try {
+        var resp = await fetch("/api/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        var out = await resp.json().catch(function () {
+          return {};
+        });
+        if (!resp.ok || !out.ok) {
+          alert("Submission failed: " + (out.error || resp.statusText || "Unknown error"));
+          return;
+        }
+        alert("Submitted successfully. Thank you!");
+        form.reset();
+      } catch (err) {
+        alert("Submission failed: " + String(err));
+      } finally {
+        if (btn) btn.disabled = false;
+      }
     });
   </script>
 </body>
