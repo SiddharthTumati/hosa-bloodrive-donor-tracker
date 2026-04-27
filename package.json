@@ -1,0 +1,11 @@
+{
+  "name": "hosa-bloodrive-donor-tracker",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.mjs"
+  }
+}
