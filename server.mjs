@@ -11,13 +11,14 @@ const port = Number(process.env.PORT) || 3000;
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
+let supabase = null;
 if (!supabaseUrl || !supabaseServiceRoleKey) {
   console.warn("Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY");
+} else {
+  supabase = createClient(supabaseUrl, supabaseServiceRoleKey, {
+    auth: { persistSession: false }
+  });
 }
-
-const supabase = createClient(supabaseUrl ?? "", supabaseServiceRoleKey ?? "", {
-  auth: { persistSession: false }
-});
 
 function sendJson(res, status, obj) {
   res.writeHead(status, { "Content-Type": "application/json; charset=utf-8" });
@@ -59,6 +60,15 @@ const server = http.createServer(async (req, res) => {
 
   if (req.method === "POST" && urlPath === "/api/submit") {
     try {
+      if (!supabase) {
+        sendJson(res, 500, {
+          ok: false,
+          error:
+            "Server is missing SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY. Set env vars and restart the server."
+        });
+        return;
+      }
+
       const body = await readJsonBody(req);
 
       const payload = {

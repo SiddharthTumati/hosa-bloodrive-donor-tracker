@@ -4,16 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>HOSA 3/19 Blood Drive Accountability — Marvin Ridge High School</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --ink: #14120f;
-      --muted: #5c5854;
-      --paper: #fbf9f5;
-      --sheet: #ffffff;
-      --line: #d9d4cc;
-      --mrhs-blue: #0a2f6b;
-      --mrhs-orange: #c45c00;
-      --wash: #f3f0ea;
+      --ink: #161412;
+      --muted: #5e5a55;
+      --faint: #8a857d;
+      --bg: #f4f1eb;
+      --card: #fffcf7;
+      --stroke: #e3ddd3;
+      --mrhs-blue: #0c2f66;
+      --mrhs-orange: #b85206;
+      --focus: #1a4a9e;
     }
 
     * {
@@ -23,133 +27,157 @@
     body {
       margin: 0;
       min-height: 100vh;
-      padding: clamp(1.25rem, 4vw, 2.5rem) clamp(0.75rem, 3vw, 1.5rem) 3rem;
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      font-size: 16px;
-      line-height: 1.55;
+      padding: clamp(1.5rem, 5vw, 3rem) clamp(1rem, 4vw, 2rem) 3.5rem;
+      font-family: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
       color: var(--ink);
-      background: var(--paper);
+      background: var(--bg);
     }
 
-    .sheet {
-      max-width: 38rem;
+    .page {
+      max-width: 36.5rem;
       margin: 0 auto;
-      background: var(--sheet);
-      border: 1px solid var(--line);
-      border-top: 3px double var(--mrhs-blue);
-      border-left: 4px solid var(--mrhs-orange);
     }
 
-    .masthead {
-      background: var(--mrhs-blue);
-      color: #fff;
-      padding: 1.35rem clamp(1.1rem, 4vw, 1.75rem) 1.15rem;
-      position: relative;
+    .hero {
+      margin-bottom: 2rem;
     }
 
-    .masthead::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 3px;
-      background: var(--mrhs-orange);
-    }
-
-    .eyebrow {
-      font-size: 0.68rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      opacity: 0.92;
-      margin: 0 0 0.5rem;
+    .hero-badge {
+      display: inline-block;
+      font-size: 0.75rem;
       font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mrhs-orange);
+      margin-bottom: 0.65rem;
     }
 
-    .masthead h1 {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", Times, serif;
-      font-size: clamp(1.35rem, 4.2vw, 1.75rem);
-      font-weight: 400;
-      line-height: 1.2;
+    .hero h1 {
+      margin: 0 0 0.5rem;
+      font-family: Newsreader, Georgia, serif;
+      font-size: clamp(2rem, 5.5vw, 2.65rem);
+      font-weight: 600;
+      font-variation-settings: "opsz" 72;
+      line-height: 1.12;
+      color: var(--mrhs-blue);
       letter-spacing: -0.02em;
     }
 
-    .masthead .tagline {
-      margin: 0.65rem 0 0;
-      font-size: 0.9rem;
-      opacity: 0.88;
-      font-weight: 400;
+    .hero-lead {
+      margin: 0;
+      font-family: Newsreader, Georgia, serif;
+      font-size: 1.125rem;
+      font-style: italic;
+      color: var(--muted);
+      line-height: 1.5;
+      max-width: 34em;
     }
 
-    .meta-bar {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 0.5rem 1rem;
-      padding: 0.75rem clamp(1.1rem, 4vw, 1.75rem);
-      border-bottom: 1px solid var(--line);
-      font-size: 0.8125rem;
+    .hero-meta {
+      margin: 1rem 0 0;
+      font-size: 0.9375rem;
       color: var(--muted);
     }
 
-    .meta-bar strong {
+    .hero-meta strong {
       color: var(--ink);
       font-weight: 600;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      border-radius: 14px;
+      padding: clamp(1.35rem, 4vw, 2rem) clamp(1.25rem, 4vw, 1.85rem) 1.75rem;
+    }
+
+    .welcome {
+      margin: 0 0 1.75rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--stroke);
+    }
+
+    .welcome > p:first-of-type {
+      margin: 0 0 1rem;
+      font-size: 1.0625rem;
+      color: var(--ink);
+    }
+
+    .welcome ul {
+      margin: 0;
+      padding: 0 0 0 1.15rem;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .welcome li {
+      margin-bottom: 0.55rem;
+    }
+
+    .welcome li:last-child {
+      margin-bottom: 0;
     }
 
     .req {
       color: var(--mrhs-orange);
-      font-weight: 700;
+      font-weight: 600;
     }
 
-    .body-pad {
-      padding: clamp(1.1rem, 3.5vw, 1.65rem) clamp(1.1rem, 4vw, 1.75rem) 1.5rem;
-    }
-
-    .notice {
-      margin: 0 0 1.75rem;
-      padding: 0 0 0 1rem;
-      border-left: 3px solid var(--mrhs-orange);
-    }
-
-    .notice p {
-      margin: 0 0 0.65rem;
-      font-size: 0.9375rem;
-      color: var(--ink);
-    }
-
-    .notice p:last-child {
-      margin-bottom: 0;
+    .fine-print {
+      margin: 1.25rem 0 0;
+      font-size: 0.875rem;
+      color: var(--faint);
+      line-height: 1.45;
     }
 
     fieldset {
       border: none;
-      margin: 0 0 1.75rem;
-      padding: 1.35rem 0 0;
-      border-top: 1px solid var(--line);
+      margin: 0;
+      padding: 0 0 2.25rem;
+    }
+
+    fieldset:not(:last-of-type) {
+      border-bottom: 1px solid var(--stroke);
+      margin-bottom: 2rem;
     }
 
     legend {
-      float: left;
-      width: 100%;
       padding: 0;
-      margin: 0 0 0.85rem;
-      font-family: Georgia, "Times New Roman", Times, serif;
-      font-size: 1.05rem;
-      font-weight: 400;
-      color: var(--mrhs-blue);
+      margin: 0 0 1.25rem;
+      max-width: 100%;
     }
 
-    fieldset::after {
-      content: "";
-      display: table;
-      clear: both;
+    .section-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mrhs-orange);
+      margin-bottom: 0.35rem;
+    }
+
+    .section-title {
+      display: block;
+      font-family: Newsreader, Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--mrhs-blue);
+      line-height: 1.2;
+    }
+
+    .section-blurb {
+      margin: 0.5rem 0 0;
+      font-size: 0.9375rem;
+      color: var(--muted);
+      font-weight: 400;
+      max-width: 32em;
     }
 
     .row {
-      margin-bottom: 1.1rem;
+      margin-bottom: 1.25rem;
     }
 
     .row:last-child {
@@ -159,7 +187,7 @@
     .name-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 1rem 1.25rem;
+      gap: 1.15rem 1.35rem;
     }
 
     @media (min-width: 520px) {
@@ -171,242 +199,264 @@
     label.block,
     .block-label {
       display: block;
-      font-size: 0.8125rem;
+      font-size: 0.9375rem;
       font-weight: 600;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 0.35rem;
+      color: var(--ink);
+      margin-bottom: 0.4rem;
     }
 
-    .block-label .req {
-      text-transform: none;
-      letter-spacing: 0;
+    .block-label {
+      margin-bottom: 0.65rem;
+    }
+
+    .helper {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.45;
     }
 
     input[type="text"],
     input[type="email"] {
       width: 100%;
       max-width: 100%;
-      padding: 0.55rem 0;
+      padding: 0.7rem 0.95rem;
       font-size: 1rem;
       font-family: inherit;
-      border: none;
-      border-bottom: 2px solid var(--line);
-      border-radius: 0;
-      background: transparent;
+      border: 1px solid var(--stroke);
+      border-radius: 10px;
+      background: #fff;
       color: var(--ink);
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
     }
 
-    input[type="text"]::placeholder,
-    input[type="email"]::placeholder {
-      color: #a8a39b;
+    input::placeholder {
+      color: #a39e96;
     }
 
-    input[type="text"]:focus,
-    input[type="email"]:focus {
+    input:hover {
+      border-color: #cfc8be;
+    }
+
+    input:focus {
       outline: none;
-      border-bottom-color: var(--mrhs-blue);
+      border-color: var(--focus);
+      box-shadow: 0 0 0 3px rgba(26, 74, 158, 0.15);
     }
 
     .choice-list {
       display: flex;
       flex-direction: column;
-      gap: 0.45rem;
+      gap: 0.65rem;
+    }
+
+    @media (min-width: 540px) {
+      .choice-list.split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.65rem;
+      }
     }
 
     .choice {
       display: flex;
       align-items: flex-start;
-      gap: 0.65rem;
+      gap: 0.75rem;
       margin: 0;
-      padding: 0.65rem 0.75rem;
-      border: 1px solid var(--line);
-      border-left: 3px solid var(--line);
-      background: var(--wash);
+      padding: 1rem 1.05rem;
+      border: 1px solid var(--stroke);
+      border-radius: 12px;
+      background: #fff;
       cursor: pointer;
-      font-size: 0.9375rem;
+      font-size: 1rem;
       font-weight: 500;
       color: var(--ink);
-      transition: border-color 0.12s ease, background 0.12s ease;
+      line-height: 1.45;
+      transition: border-color 0.15s ease, background 0.15s ease;
     }
 
     .choice:hover {
-      border-color: #b8b3a9;
+      border-color: #c9c2b6;
     }
 
     .choice input {
-      margin: 0.2rem 0 0;
+      margin: 0.28rem 0 0;
+      width: 1.1rem;
+      height: 1.1rem;
       accent-color: var(--mrhs-blue);
       flex-shrink: 0;
     }
 
     .choice:has(input:checked) {
       border-color: var(--mrhs-blue);
-      border-left-color: var(--mrhs-orange);
-      background: #fff;
+      background: #f7f9fc;
     }
 
     .ack .choice {
-      align-items: center;
-    }
-
-    .ack .choice input {
-      margin-top: 0;
+      align-items: flex-start;
     }
 
     footer.form-actions {
-      margin-top: 0.25rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--line);
+      margin-top: 0.5rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--stroke);
     }
 
     button[type="submit"] {
       width: 100%;
       font-family: inherit;
-      font-size: 0.9375rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 0.85rem 1rem;
-      border: 2px solid var(--mrhs-blue);
-      border-radius: 0;
-      background: var(--mrhs-orange);
+      font-size: 1.0625rem;
+      font-weight: 600;
+      padding: 0.95rem 1.25rem;
+      border: none;
+      border-radius: 12px;
+      background: var(--mrhs-blue);
       color: #fff;
       cursor: pointer;
+      transition: background 0.15s ease, transform 0.08s ease;
     }
 
     button[type="submit"]:hover:not(:disabled) {
-      background: #a34d00;
-      border-color: #08224d;
+      background: #0a2450;
+    }
+
+    button[type="submit"]:active:not(:disabled) {
+      transform: scale(0.99);
     }
 
     button[type="submit"]:disabled {
-      opacity: 0.55;
+      opacity: 0.5;
       cursor: not-allowed;
     }
 
     .hint {
       margin: 1rem 0 0;
-      font-size: 0.8125rem;
-      color: var(--muted);
-      line-height: 1.45;
-    }
-
-    .footer-meta {
-      margin: 1.75rem clamp(1.1rem, 4vw, 1.75rem) 0;
-      padding-top: 1rem;
-      border-top: 1px solid var(--line);
-      font-size: 0.75rem;
+      font-size: 0.875rem;
       color: var(--muted);
       text-align: center;
-      letter-spacing: 0.04em;
+      line-height: 1.5;
+    }
+
+    .page-footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.8125rem;
+      color: var(--faint);
     }
   </style>
 </head>
 <body>
-  <div class="sheet">
-    <header class="masthead">
-      <p class="eyebrow">Marvin Ridge · HOSA</p>
-      <h1>Blood drive accountability</h1>
-      <p class="tagline">March 19 &mdash; complete before the drive</p>
+  <div class="page">
+    <header class="hero">
+      <p class="hero-badge">Marvin Ridge &middot; HOSA</p>
+      <h1>March 19 blood drive</h1>
+      <p class="hero-lead">
+        Quick accountability form so we know who&rsquo;s donating and who&rsquo;s bringing a donor. Takes about a minute.
+      </p>
+      <p class="hero-meta">
+        <strong>When:</strong> March 19 &nbsp;&middot;&nbsp; <strong>Due:</strong> before drive day &nbsp;&middot;&nbsp; <span class="req">*</span> = required
+      </p>
     </header>
 
-    <div class="meta-bar">
-      <span><strong>Due:</strong> before blood drive day</span>
-      <span><span class="req">*</span> required</span>
-    </div>
-
-    <div class="body-pad">
-      <div class="notice">
-        <p>Every HOSA member must <strong>donate</strong> or <strong>recruit someone who donates</strong>. This form is how we track that.</p>
-        <p>Do not list another HOSA member as your recruit. Do not list the same outside person someone else already recruited.</p>
-        <p>Teachers and students at MRHS are fine to recruit. Staff can donate in the aux gym. The bus is full &mdash; parents and outside guests cannot donate anymore.</p>
-        <p>Questions: email, Instagram, Canvas, March slideshow, Remind, or a Blood Drive Coordinator.</p>
-        <p><strong>No donation and no recruit means you are not eligible for officer applications.</strong></p>
+    <div class="card">
+      <div class="welcome">
+        <p>
+          Everyone in HOSA needs to <strong>donate</strong> or <strong>recruit someone who donates</strong>. That&rsquo;s the rule we&rsquo;re tracking here.
+        </p>
+        <ul>
+          <li>Don&rsquo;t recruit another HOSA member (they have their own requirement).</li>
+          <li>Don&rsquo;t list the same outside person as someone else already did.</li>
+          <li>MRHS teachers and students are fair game. Staff can donate in the aux gym.</li>
+          <li>Bus is full &mdash; parents / outside guests can&rsquo;t donate anymore.</li>
+          <li>Questions? Check email, Instagram, Canvas, the March slideshow, Remind, or ask a Blood Drive Coordinator.</li>
+          <li><strong>Skipping both donate and recruit = not eligible for officer applications.</strong></li>
+        </ul>
       </div>
 
       <form id="accountability-form" action="#" method="get" novalidate>
         <fieldset>
-          <legend>Who is filling this out</legend>
+          <legend>
+            <span class="section-label">Step 1</span>
+            <span class="section-title">You</span>
+            <p class="section-blurb">So we can match this to the right member.</p>
+          </legend>
           <div class="name-grid">
             <div class="row">
               <label class="block" for="first-name">First name <span class="req">*</span></label>
-              <input type="text" id="first-name" name="first_name" required autocomplete="given-name" placeholder="e.g. Jordan" />
+              <input type="text" id="first-name" name="first_name" required autocomplete="given-name" placeholder="First name" />
             </div>
             <div class="row">
               <label class="block" for="last-name">Last name <span class="req">*</span></label>
-              <input type="text" id="last-name" name="last_name" required autocomplete="family-name" placeholder="e.g. Patel" />
+              <input type="text" id="last-name" name="last_name" required autocomplete="family-name" placeholder="Last name" />
             </div>
           </div>
           <div class="row">
             <label class="block" for="email">Personal email <span class="req">*</span></label>
-            <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com" />
+            <input type="email" id="email" name="email" required autocomplete="email" placeholder="The one you actually check" />
           </div>
         </fieldset>
 
         <fieldset>
-          <legend>Donation &amp; recruit</legend>
+          <legend>
+            <span class="section-label">Step 2</span>
+            <span class="section-title">How you&rsquo;re meeting the requirement</span>
+            <p class="section-blurb">Honest answers only &mdash; coordinators use this for planning.</p>
+          </legend>
           <div class="row">
-            <span class="block-label">Signed up to donate? <span class="req">*</span></span>
-            <div class="choice-list" role="radiogroup" aria-label="Signed up to donate blood">
-              <label class="choice"><input type="radio" name="signed_up_donate" value="no" required /> No, not yet / not signing up as donor</label>
-              <label class="choice"><input type="radio" name="signed_up_donate" value="yes" /> Yes, I am signed up to donate</label>
+            <span class="block-label">Are you signed up to donate? <span class="req">*</span></span>
+            <div class="choice-list split" role="radiogroup" aria-label="Signed up to donate blood">
+              <label class="choice"><input type="radio" name="signed_up_donate" value="no" required /> Not signed up / not donating myself</label>
+              <label class="choice"><input type="radio" name="signed_up_donate" value="yes" /> Yes, I&rsquo;m signed up to donate</label>
             </div>
           </div>
           <div class="row">
-            <span class="block-label">Recruiting someone outside HOSA? <span class="req">*</span></span>
-            <div class="choice-list" role="radiogroup" aria-label="Recruited someone">
-              <label class="choice"><input type="radio" name="recruited" value="no_donating" required /> No &mdash; I am donating myself</label>
-              <label class="choice"><input type="radio" name="recruited" value="yes" /> Yes &mdash; I recruited a donor</label>
+            <span class="block-label">Are you recruiting someone (not in HOSA)? <span class="req">*</span></span>
+            <div class="choice-list split" role="radiogroup" aria-label="Recruited someone">
+              <label class="choice"><input type="radio" name="recruited" value="no_donating" required /> No &mdash; I&rsquo;m covering it by donating</label>
+              <label class="choice"><input type="radio" name="recruited" value="yes" /> Yes &mdash; someone else is donating because of me</label>
             </div>
           </div>
         </fieldset>
 
         <fieldset>
-          <legend>Details we need on file</legend>
+          <legend>
+            <span class="section-label">Step 3</span>
+            <span class="section-title">The specifics</span>
+            <p class="section-blurb">So we have a name and a way to reach the donor if we need to.</p>
+          </legend>
           <div class="row">
-            <label class="block" for="recruit-name">
-              Recruit name <span class="req">*</span>
-            </label>
-            <p style="margin: 0 0 0.5rem; font-size: 0.875rem; color: var(--muted);">
-              First and last of the person you recruited. If you are donating, type <strong>I&rsquo;m donating</strong>.
-            </p>
+            <label class="block" for="recruit-name">Who are we recording? <span class="req">*</span></label>
+            <p class="helper">If you recruited someone: their first and last name. If you&rsquo;re donating yourself: type <strong>I&rsquo;m donating</strong>.</p>
             <input type="text" id="recruit-name" name="recruit_or_donating_statement" required placeholder="Full name or I'm donating" />
           </div>
           <div class="row">
-            <label class="block" for="recruit-contact">
-              Their email or phone <span class="req">*</span>
-            </label>
-            <p style="margin: 0 0 0.5rem; font-size: 0.875rem; color: var(--muted);">
-              If you are donating, put <strong>your</strong> email or phone here instead.
-            </p>
-            <input type="text" id="recruit-contact" name="recruit_contact" required inputmode="email" autocomplete="off" placeholder="email or digits" />
+            <label class="block" for="recruit-contact">Email or phone for that person <span class="req">*</span></label>
+            <p class="helper">If that person is you (you&rsquo;re donating), put <strong>your</strong> email or number here.</p>
+            <input type="text" id="recruit-contact" name="recruit_contact" required inputmode="email" autocomplete="off" placeholder="Email or phone number" />
           </div>
         </fieldset>
 
         <fieldset class="ack">
-          <legend>Officer eligibility</legend>
+          <legend>
+            <span class="section-label">Last thing</span>
+            <span class="section-title">Officer eligibility</span>
+          </legend>
           <div class="choice-list">
             <label class="choice">
               <input type="checkbox" name="understand" value="yes" required />
-              I understand I must donate or recruit to be considered for officer applications. <span class="req">*</span>
+              I understand I have to donate or recruit to be considered for officer applications. <span class="req">*</span>
             </label>
           </div>
         </fieldset>
 
         <footer class="form-actions">
-          <button type="submit">Turn in form</button>
-          <p class="hint">
-            Your answers are stored for accountability only. Email your advisor if you submitted something by mistake.
-          </p>
+          <button type="submit">Submit</button>
+          <p class="hint">Saved automatically for accountability. Email your advisor if you need something fixed.</p>
         </footer>
       </form>
     </div>
 
-    <p class="footer-meta">
-      MRHS HOSA &middot; Royal blue &amp; orange
-    </p>
+    <p class="page-footer">Marvin Ridge High School HOSA</p>
   </div>
 
   <script>
